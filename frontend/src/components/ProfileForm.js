@@ -8,6 +8,7 @@ const ProfileForm = () => {
     const [university, setUniversity] = useState('')
     const [year, setYear] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault() // can remove this to see  instant results
@@ -25,12 +26,14 @@ const ProfileForm = () => {
 
         if (!response.ok) {
             setError(json.error)
+            setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
             setName('')
             setUniversity('')
             setYear('')
             setError(null)
+            setEmptyFields([])
             console.log('profile created', json)
             dispatch({type: 'CREATE_PROFILE', payload: json})
         }
@@ -45,20 +48,25 @@ const ProfileForm = () => {
             type="text" 
             onChange={(e) => setName(e.target.value)}
             value={name}
+            className={emptyFields.includes('name') ? 'error' : ''} // if title is in the empty fields, it gives it a class of error
             />
 
             <label>University:</label>
-            <input 
-            type="text" 
-            onChange={(e) => setUniversity(e.target.value)}
-            value={university}
-            />
+            <select name="university" onChange={(e) => setUniversity(e.target.value)} 
+            value={university} 
+            className={emptyFields.includes('university') ? 'error' : ''}>
+                <option>Waterloo</option>
+                <option>Laurier</option>
+                <option>Western</option>
+                <option>Guelph</option>
+            </select>
 
             <label>Year:</label>
             <input 
             type="number" 
             onChange={(e) => setYear(e.target.value)}
             value={year}
+            className={emptyFields.includes('year') ? 'error' : ''}
             />
 
             <button>Create Profile</button>

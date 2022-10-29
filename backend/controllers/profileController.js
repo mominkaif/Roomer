@@ -30,6 +30,22 @@ const getProfile = async (req, res) => {
 // create a new profile
 const createProfile = async (req, res) => {
   const {name, university, year} = req.body
+
+let emptyFields = []
+
+if(!name) {
+  emptyFields.push('name')
+}
+if(!university) {
+  emptyFields.push('university')
+}
+if(!year) {
+  emptyFields.push('year')
+}
+if (emptyFields.length > 0) {
+  return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+}
+
   // add doc to db
   try{
       const profile = await Profile.create({name, university, year})
