@@ -22,7 +22,7 @@ app.use('/api/profiles', profileRoutes)
 
 
 //connect to database
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI_PROFILES)
     .then(() => {
         //listen for requests
         app.listen(process.env.PORT, () => {
