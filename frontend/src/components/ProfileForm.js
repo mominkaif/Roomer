@@ -52,14 +52,15 @@ const ProfileForm = () => {
             />
 
             <label>University:</label>
-            <select name="university" onChange={(e) => setUniversity(e.target.value)} 
+            <input name="unis" placeholder="Type here..." list="unisList" onChange={(e) => setUniversity(e.target.value)} 
             value={university} 
-            className={emptyFields.includes('university') ? 'error' : ''}>
-                <option>Waterloo</option>
-                <option>Laurier</option>
-                <option>Western</option>
-                <option>Guelph</option>
-            </select>
+            className={emptyFields.includes('university') ? 'error' : ''} />
+                <datalist id="unisList">
+                    <option value="Guelph"/>
+                    <option value="Laurier"/>
+                    <option value="Western"/>
+                    <option value="Waterloo"/>
+                </datalist>
 
             <label>Year:</label>
             <input 
