@@ -60,6 +60,7 @@ const ProfileForm = () => {
                     <option value="Laurier"/>
                     <option value="Western"/>
                     <option value="Waterloo"/>
+                    <option value="Mac"/>
                 </datalist>
 
             <label>Year:</label>

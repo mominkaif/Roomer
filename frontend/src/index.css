@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 /* layout */
 :root {
@@ -8,17 +8,21 @@
 }
 
 body {
-  background: #f1f1f1;
+  background: #ffffff;
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "Varela Round";
 }
 
 header {
-  background: rgb(190, 190, 190);
+  background: #47a3d8;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 header .container {
   max-width: 1400px;
+  height: 50px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -38,6 +42,7 @@ header a {
 }
 
 .listings {
+  z-index: 0;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
@@ -46,7 +51,9 @@ header a {
 /* listing styles */
 
 .profile-details {
+  z-index: 0;
   background: #fff;
+  top: 50px;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
