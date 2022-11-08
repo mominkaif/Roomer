@@ -3,7 +3,7 @@
 
 /* layout */
 :root {
-  --primary: #47a3d8;
+  --primary: #00b894;
   --error: #bc1b1b;
 }
 
@@ -14,8 +14,7 @@ body {
 }
 
 header {
-  background: #47a3d8;
-  position: fixed;
+  background: #00b894;
   width: 100%;
   z-index: 1;
 }
@@ -31,7 +30,7 @@ header .container {
 }
 
 header a {
-  color: #333;
+  color: #555;
   text-decoration: none;
 }
 
@@ -58,7 +57,7 @@ header a {
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 5px #b3b3b3;
 }
 
 .profile-details h4 {
@@ -94,7 +93,7 @@ input {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #555;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -102,7 +101,7 @@ input {
 form button {
   background: var(--primary);
   border: 0;
-  color: #fff;
+  color: #555;
   padding: 10px;
   font-family: "Montserrat";
   border-radius: 4px;
