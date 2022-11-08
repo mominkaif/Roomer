@@ -171,3 +171,7 @@ form.login label, form.signup label {
 form.login button, form.signup button {
   font-family: "Varela Round";
 }
+
+.home {
+  color: var(--primary);
+}

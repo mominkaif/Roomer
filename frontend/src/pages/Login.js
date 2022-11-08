@@ -13,7 +13,6 @@ const Login = () => {
 
         await login(email, password)
 
-        navigate("/")
     }
 
     return(
