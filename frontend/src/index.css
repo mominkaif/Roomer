@@ -3,18 +3,18 @@
 
 /* layout */
 :root {
-  --primary: #00b894;
+  --primary: #4388e2;
   --error: #bc1b1b;
 }
 
 body {
-  background: #ffffff;
+  background: #000000;
   margin: 0;
   font-family: "Varela Round";
 }
 
 header {
-  background: #00b894;
+  background: rgba(29,29,31,0.72);
   width: 100%;
   z-index: 1;
 }
@@ -30,7 +30,7 @@ header .container {
 }
 
 header a {
-  color: #555;
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -51,13 +51,12 @@ header a {
 
 .profile-details {
   z-index: 0;
-  background: #fff;
+  background: rgba(29,29,31,0.72);
   top: 50px;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px #b3b3b3;
 }
 
 .profile-details h4 {
@@ -86,6 +85,7 @@ header a {
 /* new profile form */
 label, input {
   display: block;
+  color: var(--primary);
 }
 
 input {
@@ -93,15 +93,19 @@ input {
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
+  color: #555;
   border: 1px solid #555;
+  background-color: rgba(29,29,31,0.72);
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 form button {
+  font-size: medium;
+  font-family: "Varela Round";
   background: var(--primary);
   border: 0;
-  color: #555;
+  color: rgba(29,29,31,0.72);
   padding: 10px;
   font-family: "Montserrat";
   border-radius: 4px;
@@ -119,4 +123,33 @@ div.error {
 
 input.error {
   border: 1px solid var(--error);
+}
+
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+/* auth forms */
+form.signup, form.login {
+  font-size: medium;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(29,29,31,0.72);
+  border-radius: 4px;
+  color: var(--primary);
+}
+
+/*email password label */
+form.login label, form.signup label {
+  color: #555;
+}
+
+form.login button, form.signup button {
+  font-family: "Varela Round";
 }
