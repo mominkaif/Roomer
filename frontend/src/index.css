@@ -134,6 +134,24 @@ nav {
 nav a {
   margin-left: 10px;
 }
+
+nav button {
+  background-color: rgba(29,29,31,0.72);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Varela Round";
+  font-size: medium;
+}
+
+nav span {
+  color: var(--primary);
+  padding: 6px 10px;
+  font-family: "Varela Round";
+  font-size: medium;
+}
+
 /* auth forms */
 form.signup, form.login {
   font-size: medium;

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useAuthContext } from './hooks/useAuthContext'
 
 //pages and components
 import Home from './pages/Home'
@@ -8,6 +9,9 @@ import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
 
 function App() {
+
+  const { user } = useAuthContext()
+  
   return (
     <div className="App">
       <BrowserRouter>
