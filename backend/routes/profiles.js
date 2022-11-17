@@ -7,8 +7,12 @@ const {
     
     updateProfile
 } = require('../controllers/profileController')
+const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router();
+
+// require auth for all workout routes 
+router.use(requireAuth)
 
 //to get all profiles
 router.get('/', getProfiles)
