@@ -6,6 +6,7 @@ import Listings from './pages/Listings'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
+import ProfileForm from './components/ProfileForm'
 
 function App() {
 
@@ -24,12 +25,17 @@ function App() {
             />
 
             <Route 
+              path="/profile"
+              element={<ProfileForm/>}
+            />
+
+            <Route 
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
 
             <Route 
-              path="//signup"
+              path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
 
