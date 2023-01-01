@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
-//import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
     const { user } = useAuthContext()
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [university, setUniversity] = useState('')
@@ -47,7 +47,7 @@ const ProfileForm = () => {
             console.log('profile created', json)
             dispatch({type: 'CREATE_PROFILE', payload: json})
         }
-        //navigate("/")
+        navigate("/")
     }
 
     return (
