@@ -1,36 +1,44 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import { useProfilesContext } from './hooks/useProfilesContext'
 
 //pages and components
 import Listings from './pages/Listings'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
+import CreateProfile from './pages/CreateProfile'
 
 function App() {
 
   const { user } = useAuthContext()
-  
+  const { profile } = useProfilesContext()
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <div className="pages">
           <Routes>
-            
-            <Route 
+
+            <Route
               path="/"
-              element={user ? <Listings /> : <Navigate to="/login"/>}
+              element={user ? <Listings /> : <Navigate to="/login" />}
             />
 
-            <Route 
+            <Route
+              path="/cp"
+              element={profile ? <CreateProfile /> : <Navigate to="/" />}
+            />
+
+            <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
 
-            <Route 
-              path="//signup"
-              element={!user ? <Signup /> : <Navigate to="/" />}
+            <Route
+              path="/signup"
+              element={!user ? <Signup /> : <Navigate to="/cp" />}
             />
 
           </Routes>
