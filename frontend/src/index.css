@@ -175,3 +175,8 @@ form.login button, form.signup button {
 .home {
   color: var(--primary);
 }
+
+/*user specific content */
+.userprofile-details h1 {
+  color: white;
+}

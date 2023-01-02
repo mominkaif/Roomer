@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
-//import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
@@ -11,6 +11,10 @@ const ProfileForm = () => {
     const [name, setName] = useState('')
     const [university, setUniversity] = useState('')
     const [year, setYear] = useState('')
+    const [hobbies, setHobbies] = useState('')
+    const [diet, setDiet] = useState('')
+    const [program, setProgram] = useState('')
+    const [bio, setBio] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
@@ -22,7 +26,7 @@ const ProfileForm = () => {
             return
         }
 
-        const profile = {name, university, year}
+        const profile = {name, university, year, hobbies, diet, program, bio}
 
         const response = await fetch('/api/profiles', {
             method: 'POST',
@@ -42,20 +46,22 @@ const ProfileForm = () => {
             setName('')
             setUniversity('')
             setYear('')
+            setHobbies('')
+            setDiet('')
+            setBio('')
             setError(null)
             setEmptyFields([])
             console.log('profile created', json)
             dispatch({type: 'CREATE_PROFILE', payload: json})
             navigate('/')
         }
-        navigate("/")
     }
 
     return (
         <form className="create" onSubmit={handleSubmit}>
             <h3>Create a Profile</h3>
 
-            <label>Student Name:</label>
+            <label>Name:</label>
             <input 
             type="text" 
             onChange={(e) => setName(e.target.value)}
@@ -81,6 +87,38 @@ const ProfileForm = () => {
             onChange={(e) => setYear(e.target.value)}
             value={year}
             className={emptyFields.includes('year') ? 'error' : ''}
+            />
+
+            <label>Program:</label>
+            <input 
+            type="text" 
+            onChange={(e) => setProgram(e.target.value)}
+            value={program}
+            className={emptyFields.includes('program') ? 'error' : ''}
+            />
+
+            <label>Hobbies:</label>
+            <input 
+            type="text" 
+            onChange={(e) => setHobbies(e.target.value)}
+            value={hobbies}
+            className={emptyFields.includes('hobbies') ? 'error' : ''}
+            />
+
+            <label>Dietary Restrictions:</label>
+            <input 
+            type="text" 
+            onChange={(e) => setDiet(e.target.value)}
+            value={diet}
+            className={emptyFields.includes('diet') ? 'error' : ''}
+            />
+
+            <label>Bio:</label>
+            <input 
+            type="text" 
+            onChange={(e) => setBio(e.target.value)}
+            value={bio}
+            className={emptyFields.includes('bio') ? 'error' : ''}
             />
 
             <button>Create Profile</button>

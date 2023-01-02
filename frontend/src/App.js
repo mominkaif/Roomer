@@ -7,7 +7,9 @@ import Listings from './pages/Listings'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Navbar from './components/Navbar'
-
+import CreateProfile from './pages/CreateProfile'
+import ProfileForm from './components/ProfileForm'
+import UserProfile from './pages/UserProfile'
 
 function App() {
 
@@ -24,6 +26,11 @@ function App() {
             <Route
               path="/"
               element={user ? <Listings /> : <Navigate to="/login" />}
+            />
+
+            <Route 
+                path=":id"
+                element={user ? <UserProfile/> : <Navigate to="/login" />}
             />
 
             <Route

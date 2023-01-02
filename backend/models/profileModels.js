@@ -14,6 +14,22 @@ const profileSchema = new Schema({
     year: {
         type: Number,
         required: true
+    },
+    hobbies: {
+        type: String,
+        required: true
+    },
+    diet: {
+        type: String,
+        required: true
+    },
+    program: {
+        type: String,
+        required: true
+    },
+    bio: {
+        type: String,
+        required: true
     }
 }, { timestamps: true })
 
