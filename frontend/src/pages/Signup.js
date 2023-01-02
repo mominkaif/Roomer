@@ -1,12 +1,6 @@
 import { useState } from "react"
 import { useSignup } from "../hooks/useSignup"
 import {useNavigate} from 'react-router-dom';
-//import { useNavigate } from "react-router-dom"
-// profile form
-//import ProfileForm from '../components/ProfileForm'
-
-
-
 
 const Signup = () => {
     const [email, setEmail] = useState('')

@@ -19,7 +19,7 @@ export const profilesReducer = (state, action) => {
 
 export const ProfilesContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(profilesReducer, {
-        profiles: null
+        profiles: []
     })
 
     return (

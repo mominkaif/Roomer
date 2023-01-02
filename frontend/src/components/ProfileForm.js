@@ -52,7 +52,7 @@ const ProfileForm = () => {
             setError(null)
             setEmptyFields([])
             console.log('profile created', json)
-            dispatch({type: 'CREATE_PROFILE', payload: json})
+            await dispatch({type: 'CREATE_PROFILE', payload: json})
             navigate('/')
         }
     }
