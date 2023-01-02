@@ -21,16 +21,6 @@ const Signup = () => {
 
         await signup(email, password);
         navigate('/profile')
-
-        await signup(email, password)
-
-        // if(signup){
-        //     navigate("/cp")
-        // }
-
-        await signup(email, password);
-        navigate('/profile')
-
     }
 
     return (
