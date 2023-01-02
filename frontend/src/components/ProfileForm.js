@@ -1,11 +1,16 @@
 import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'
+=======
+//import { useNavigate } from "react-router-dom"
+>>>>>>> 612a3768af89f5a933324cd85fcf5430cd348e93
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
     const { user } = useAuthContext()
+    //const navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [university, setUniversity] = useState('')
@@ -48,6 +53,7 @@ const ProfileForm = () => {
             dispatch({type: 'CREATE_PROFILE', payload: json})
             navigate('/')
         }
+        //navigate("/")
     }
 
     return (
