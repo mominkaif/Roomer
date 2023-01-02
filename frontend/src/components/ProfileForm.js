@@ -1,23 +1,18 @@
 import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom'
-=======
 //import { useNavigate } from "react-router-dom"
->>>>>>> 612a3768af89f5a933324cd85fcf5430cd348e93
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
     const { user } = useAuthContext()
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [university, setUniversity] = useState('')
     const [year, setYear] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
-    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault() // can remove this to see  instant results
@@ -53,7 +48,7 @@ const ProfileForm = () => {
             dispatch({type: 'CREATE_PROFILE', payload: json})
             navigate('/')
         }
-        //navigate("/")
+        navigate("/")
     }
 
     return (
