@@ -4,7 +4,6 @@ import { useAuthContext } from "../hooks/useAuthContext"
 
 // components
 import ProfileDetails from '../components/ProfileDetails'
-import ProfileForm from '../components/ProfileForm'
 
 const Listings = () => {
     const {profiles, dispatch} = useProfilesContext()
@@ -36,7 +35,6 @@ const Listings = () => {
                     <ProfileDetails key={profile._id} profile={profile} />
                 ))}
             </div>
-            <ProfileForm />
         </div>
     )
 }

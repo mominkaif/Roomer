@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
+import { useNavigate } from 'react-router-dom'
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
@@ -11,6 +12,7 @@ const ProfileForm = () => {
     const [year, setYear] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault() // can remove this to see  instant results
@@ -44,6 +46,7 @@ const ProfileForm = () => {
             setEmptyFields([])
             console.log('profile created', json)
             dispatch({type: 'CREATE_PROFILE', payload: json})
+            navigate('/')
         }
     }
 
