@@ -1,12 +1,6 @@
 import { useState } from "react"
 import { useSignup } from "../hooks/useSignup"
 import {useNavigate} from 'react-router-dom';
-//import { useNavigate } from "react-router-dom"
-// profile form
-//import ProfileForm from '../components/ProfileForm'
-
-
-
 
 const Signup = () => {
     const [email, setEmail] = useState('')
@@ -21,16 +15,6 @@ const Signup = () => {
 
         await signup(email, password);
         navigate('/profile')
-
-        await signup(email, password)
-
-        // if(signup){
-        //     navigate("/cp")
-        // }
-
-        await signup(email, password);
-        navigate('/profile')
-
     }
 
     return (

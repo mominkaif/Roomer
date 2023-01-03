@@ -12,7 +12,6 @@ import ProfileForm from './components/ProfileForm'
 import UserProfile from './pages/UserProfile'
 
 function App() {
-
   const { user } = useAuthContext()
   const { profile } = useProfilesContext()
 
@@ -22,7 +21,7 @@ function App() {
         <Navbar />
         <div className="pages">
           <Routes>
-
+            
             <Route
               path="/"
               element={user ? <Listings /> : <Navigate to="/login" />}
@@ -49,9 +48,15 @@ function App() {
             />
 
             <Route 
-              path="//signup"
+              path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
+
+            <Route 
+              path="/random"
+              element={<CreateProfile />}
+            />
+
 
           </Routes>
         </div>
