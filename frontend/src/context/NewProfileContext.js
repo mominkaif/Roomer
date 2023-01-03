@@ -1,4 +1,5 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
+import { useNewProfileContext } from '../hooks/useNewProfileContext'
 
 export const NewProfileContext = createContext()
 
@@ -19,6 +20,16 @@ export const NewProfileContextProvider = ({ children }) => {
     const [state, newDispatch] = useReducer(newProfileReducer, {
         newProfile: false
     })
+
+    useEffect(() => {
+        const newProfile = JSON.parse(localStorage.getItem('created_profile?'))
+        console.log(newProfile, "HI")
+
+        if (newProfile) {
+            console.log("HERE")
+            newDispatch({ type: 'CREATED_PROFILE', payload: true })
+        }
+    }, [])
 
     console.log("newprofile context state: ", state)
 

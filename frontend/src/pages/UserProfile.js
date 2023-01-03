@@ -26,7 +26,7 @@ const UserProfile = () => {
 
     return (
         <div className="userprofile-details">
-            {userprofile && <h1>Name: {userprofile.name}</h1>}
+            {userprofile && <h1>Hi I'm, {userprofile.name} insert user picture here</h1>}
             {userprofile && <h1>University: {userprofile.university}</h1>}
             {userprofile && <h1>Year: {userprofile.year}</h1>}
             {userprofile && <h1>Hobbies: {userprofile.hobbies}</h1>}

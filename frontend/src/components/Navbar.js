@@ -11,6 +11,7 @@ const Navbar = () => {
 
     const handleClick = async () => {
         await newDispatch({type: 'NOT_CREATED', payload: true})
+        localStorage.setItem('created_profile?', JSON.stringify(false));
         logout()
 
     }
