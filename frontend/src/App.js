@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 import { useProfilesContext } from './hooks/useProfilesContext'
+import { useNewProfileContext } from './hooks/useNewProfileContext'
 
 //pages and components
 import Listings from './pages/Listings'

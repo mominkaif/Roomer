@@ -17,6 +17,7 @@ header {
   background: rgba(29,29,31,0.72);
   width: 100%;
   z-index: 1;
+  color: var(--primary);
 }
 
 header .container {

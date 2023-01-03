@@ -2,9 +2,11 @@ import { useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useNavigate } from "react-router-dom"
+import { useNewProfileContext } from "../hooks/useNewProfileContext"
 
 const ProfileForm = () => {
     const { dispatch } = useProfilesContext()
+    const { newDispatch } = useNewProfileContext()
     const { user } = useAuthContext()
     const navigate = useNavigate()
 
@@ -53,6 +55,7 @@ const ProfileForm = () => {
             setEmptyFields([])
             console.log('profile created', json)
             await dispatch({type: 'CREATE_PROFILE', payload: json})
+            await newDispatch({type: 'CREATED_PROFILE', payload: true})
             navigate('/')
         }
     }
