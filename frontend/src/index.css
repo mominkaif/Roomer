@@ -44,7 +44,6 @@ header a {
 .listings {
   z-index: 0;
   display: grid;
-  grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
 
@@ -58,6 +57,10 @@ header a {
   margin: 20px auto;
   padding: 20px;
   position: relative;
+}
+
+.profile-details a {
+  text-decoration: none;
 }
 
 .profile-details h4 {
@@ -184,7 +187,54 @@ form.login button, form.signup button {
 
 /* filter component */
 .filter-area {
+  display: flex;
+  color: var(--primary);
+  flex-direction: column;
+  justify-content: center;
   width:100%;
-  background-color: white;
-  padding: 2px 20px;
+  background-color: rgb(42, 40, 40);
+  padding: 2px;
+  border-radius: 5px;
+  margin-bottom: -20px;
+  font-family: inherit;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.filter-area select{
+  background-color: rgb(42, 40, 40);
+  border: none;
+  color: var(--primary);
+  font-family: inherit;
+  font-weight: bold;
+}
+
+/* pagiation */
+.pagination {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #eee;
+  border-color: #eee;
+}
+
+.pagination button.active {
+  font-weight: 900;
+  background: var(--primary);
+  color: white;
 }
