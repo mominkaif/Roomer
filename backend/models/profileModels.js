@@ -30,8 +30,10 @@ const profileSchema = new Schema({
     bio: {
         type: String,
         required: true
+    },
+    postImage: {
+        myFile: {type: String, required: true},
     }
 }, { timestamps: true })
 
 module.exports = mongoose.model('Profile', profileSchema)
-

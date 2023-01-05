@@ -29,7 +29,8 @@ const getProfile = async (req, res) => {
 
 // create a new profile
 const createProfile = async (req, res) => {
-  const { name, university, year, hobbies, diet, program, bio } = req.body
+  console.log(req.body)
+  const { name, university, year, hobbies, diet, program, bio, postImage } = req.body
 
   let emptyFields = []
 
@@ -54,16 +55,20 @@ const createProfile = async (req, res) => {
   if (!bio) {
     emptyFields.push('bio')
   }
+  if (!postImage) {
+    emptyFields.push('postImage')
+  }
   if (emptyFields.length > 0) {
     return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
   }
 
   // add doc to db
   try {
-    const profile = await Profile.create({ name, university, year, hobbies, diet, program, bio })
+    console.log(name)
+    const profile = await Profile.create({ name, university, year, hobbies, diet, program, bio, postImage })
     res.status(200).json(profile)
   } catch (error) {
-    res.status(400).json({ error: error.message })
+    res.status(400).json({ error: 'couldnt add to db' })
   }
 }
 

@@ -17,6 +17,7 @@ header {
   background: rgba(29,29,31,0.72);
   width: 100%;
   z-index: 1;
+  color: var(--primary);
 }
 
 header .container {
@@ -43,13 +44,14 @@ header a {
 .listings {
   z-index: 0;
   display: grid;
-  grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
 
 /* listing styles */
 
 .profile-details {
+  display: flex;
+  justify-content: space-between;
   z-index: 0;
   background: rgba(29,29,31,0.72);
   top: 50px;
@@ -57,6 +59,20 @@ header a {
   margin: 20px auto;
   padding: 20px;
   position: relative;
+}
+
+.profile-picture-container {
+  height: 100%;
+}
+
+.profile-picture-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.profile-details a {
+  text-decoration: none;
 }
 
 .profile-details h4 {
@@ -178,5 +194,59 @@ form.login button, form.signup button {
 
 /*user specific content */
 .userprofile-details h1 {
+  color: white;
+}
+
+/* filter component */
+.filter-area {
+  display: flex;
+  color: var(--primary);
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+  background-color: rgb(42, 40, 40);
+  padding: 2px;
+  border-radius: 5px;
+  margin-bottom: -20px;
+  font-family: inherit;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.filter-area select{
+  background-color: rgb(42, 40, 40);
+  border: none;
+  color: var(--primary);
+  font-family: inherit;
+  font-weight: bold;
+}
+
+/* pagiation */
+.pagination {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #eee;
+  border-color: #eee;
+}
+
+.pagination button.active {
+  font-weight: 900;
+  background: var(--primary);
   color: white;
 }

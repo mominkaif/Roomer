@@ -29,6 +29,8 @@ export const useSignup = () => {
             dispatch({type: 'LOGIN', payload: json})
 
             setIsLoading(false)
+            // need this for conditional navigation to profile form
+            return true
         }
     }
 

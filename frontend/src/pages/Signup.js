@@ -13,8 +13,11 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        await signup(email, password);
-        navigate('/profile')
+        let userCreated = await signup(email, password);
+
+        if (userCreated) {
+            navigate('/profile')
+        }
     }
 
     return (

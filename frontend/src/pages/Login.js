@@ -1,16 +1,21 @@
 import { useState } from "react"
 import { useLogin } from "../hooks/useLogin"
+import { useNewProfileContext } from '../hooks/useNewProfileContext'
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {login, error, isLoading} = useLogin()
 
+    const { newDispatch } = useNewProfileContext()
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        await login(email, password)
-
+        let userCreated = await login(email, password)
+        if (userCreated) {
+            await newDispatch({type: 'CREATED_PROFILE', payload: true})
+            localStorage.setItem('created_profile?', JSON.stringify(true))
+        }
     }
 
     return(
