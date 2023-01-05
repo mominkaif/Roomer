@@ -56,7 +56,7 @@ const ProfileForm = () => {
             console.log('profile created', json)
             await dispatch({type: 'CREATE_PROFILE', payload: json})
             await newDispatch({type: 'CREATED_PROFILE', payload: true})
-            localStorage.setItem('created_profile?', JSON.stringify(true));
+            localStorage.setItem('created_profile?', JSON.stringify(true))
             navigate('/')
         }
     }

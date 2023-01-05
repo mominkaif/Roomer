@@ -1,13 +1,33 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useProfilesContext } from "../hooks/useProfilesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 // components
 import ProfileDetails from '../components/ProfileDetails'
+import Filter from "../components/Filter"
 
 const Listings = () => {
     const {profiles, dispatch} = useProfilesContext()
     const {user} = useAuthContext()
+
+    // state for filter value
+    let [filterTextValue, setFilterText] = useState("All")
+
+    let filteredProfileList = profiles.filter((profile) => {
+        if (filterTextValue === 'Guelph') {
+            return profile.university === 'Guelph'
+        } else if (filterTextValue === 'Laurier') {
+            return profile.university === 'Laurier'
+        } else if (filterTextValue === 'Western') {
+            return profile.university === 'Western'
+        } else if (filterTextValue === 'Waterloo') {
+            return profile.university === 'Waterloo'
+        } else if (filterTextValue === 'Mac') {
+            return profile.university === 'Mac'
+        } else {
+            return profile
+        }
+    })
 
     useEffect(() => {
         const fetchProfiles = async () => {
@@ -28,10 +48,15 @@ const Listings = () => {
         }
     }, [dispatch, user])
 
+    function onFilterValueSelected (filterValue) {
+        setFilterText(filterValue)
+    }
+
     return (
         <div className="listings">
             <div className="profiles">
-                {profiles && profiles.map((profile) => (
+            {profiles && <Filter filterValueSelected={onFilterValueSelected}></Filter>}
+                {filteredProfileList && filteredProfileList.map((profile) => (
                     <ProfileDetails key={profile._id} profile={profile} />
                 ))}
             </div>

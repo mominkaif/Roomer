@@ -12,6 +12,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await newDispatch({type: 'CREATED_PROFILE', payload: true})
+        localStorage.setItem('created_profile?', JSON.stringify(true))
         await login(email, password)
 
     }

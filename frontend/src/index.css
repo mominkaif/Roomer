@@ -181,3 +181,10 @@ form.login button, form.signup button {
 .userprofile-details h1 {
   color: white;
 }
+
+/* filter component */
+.filter-area {
+  width:100%;
+  background-color: white;
+  padding: 2px 20px;
+}
