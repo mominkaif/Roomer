@@ -33,6 +33,7 @@ const UserProfile = () => {
             {userprofile && <h1>Diet: {userprofile.diet}</h1>}
             {userprofile && <h1>Program: {userprofile.program}</h1>}
             {userprofile && <h1>Bio: {userprofile.bio}</h1>}
+            {userprofile && <img src={userprofile.postImage.myFile} />}
         </div>
     )
 }
