@@ -29,6 +29,9 @@ export const useLogin = () => {
             dispatch({type: 'LOGIN', payload: json})
 
             setIsLoading(false)
+
+            //need this to conditionally set the created_profile? value
+            return true
         }
     }
 
