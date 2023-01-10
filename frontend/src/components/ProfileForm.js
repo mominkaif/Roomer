@@ -21,6 +21,15 @@ const ProfileForm = () => {
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
+    function componentDidUpdate() {
+        window.history.pushState(null, document.title, window.location.href);
+        window.addEventListener('popstate', function(event) {
+          window.history.pushState(null, document.title, window.location.href);
+        });
+      }
+
+    componentDidUpdate()
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -39,8 +48,12 @@ const ProfileForm = () => {
                 'Authorization': `Bearer ${user.token}`
             }
         })
+        if (response.status == 413){
+            setError("Image size too large")
+        }
+        
         const json = await response.json()
-
+        
         if (!response.ok) {
             setError(json.error)
             setEmptyFields(json.emptyFields)
@@ -140,6 +153,7 @@ const ProfileForm = () => {
             name="myFile" 
             accept=".jpeg, .jpg, .png" 
             onChange={(e) => handleFileUpload(e)}
+            className={emptyFields.includes('postImage') ? 'error' : ''}
             />
 
             <button>Create Profile</button>

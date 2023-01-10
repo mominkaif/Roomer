@@ -29,9 +29,7 @@ const getProfile = async (req, res) => {
 
 // create a new profile
 const createProfile = async (req, res) => {
-  console.log(req.body)
   const { name, university, year, hobbies, diet, program, bio, postImage } = req.body
-
   let emptyFields = []
 
   if (!name) {
@@ -55,7 +53,7 @@ const createProfile = async (req, res) => {
   if (!bio) {
     emptyFields.push('bio')
   }
-  if (!postImage) {
+  if (!postImage.myFile) {
     emptyFields.push('postImage')
   }
   if (emptyFields.length > 0) {
@@ -64,7 +62,6 @@ const createProfile = async (req, res) => {
 
   // add doc to db
   try {
-    console.log(name)
     const profile = await Profile.create({ name, university, year, hobbies, diet, program, bio, postImage })
     res.status(200).json(profile)
   } catch (error) {

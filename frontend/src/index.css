@@ -283,13 +283,13 @@ form.login a, form.signup a {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: transparent;
-  color: #eee;
-  border-color: #eee;
+  background: var(--primary);
+  color: white;
+  border-color: black;
 }
 
 .pagination button.active {
   font-weight: 900;
-  background: var(--primary);
-  color: white;
+  background: white;
+  color: var(--primary);
 }

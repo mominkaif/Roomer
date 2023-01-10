@@ -19,7 +19,6 @@ const Navbar = () => {
 
     return (
         <header>
-
                 <nav>
                     {user && newProfile && (
                         <div className='nav-items-container'>
