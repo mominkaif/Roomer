@@ -133,7 +133,7 @@ const ProfileForm = () => {
             className={emptyFields.includes('bio') ? 'error' : ''}
             />
             
-            <label htmlFor="file-upload">Upload File</label>
+            <label htmlFor="file-upload">Profile Picture</label>
             <input 
             type="file" 
             label="image" 
