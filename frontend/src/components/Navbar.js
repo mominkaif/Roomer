@@ -19,32 +19,20 @@ const Navbar = () => {
 
     return (
         <header>
-            <div className="container">
-                {newProfile && (
-                    <Link to="/">
-                        <h1>Roomer</h1>
-                    </Link>
-                )}
-                {!newProfile && (
-                    <h1>Roomer</h1>
-                )}
+
                 <nav>
                     {user && newProfile && (
-                        <div>
-                            <span>{user.email}</span>
-                            <button onClick={handleClick}>Log out</button>
-                        </div>
-                    )}
-                    {!user && (
-                        <div>
-                            <Link to="/login">Login</Link>
-                            <Link to="/signup">Signup</Link>
+                        <div className='nav-items-container'>
+                            <Link to="/">
+                                <img className="nav-img" src={require("../Images/logo.png")} alt="logo" />
+                            </Link>
+                            <div className='user-details'>
+                                <span>{user.email}</span>
+                                <button onClick={handleClick}>Log out</button>
+                            </div>
                         </div>
                     )}
                 </nav>
-            </div>
-
-
         </header>
     )
 }
