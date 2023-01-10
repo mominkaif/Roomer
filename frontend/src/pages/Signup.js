@@ -15,9 +15,12 @@ const Signup = () => {
 
         let userCreated = await signup(email, password);
 
+        
         if (userCreated) {
             navigate('/profile')
         }
+
+
     }
 
     return (

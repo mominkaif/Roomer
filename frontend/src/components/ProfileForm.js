@@ -37,7 +37,7 @@ const ProfileForm = () => {
             setError("You must be logged in")
             return
         }
-
+        console.log(user)
         const profile = {name, university, year, hobbies, diet, program, bio, postImage}
 
         const response = await fetch('/api/profiles', {
