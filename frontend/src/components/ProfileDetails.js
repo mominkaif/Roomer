@@ -10,10 +10,9 @@ const ProfileDetails = ({ profile }) => {
                 <p><strong>University: </strong> {profile.university}</p>
                 <p><strong>Year: </strong> {profile.year}</p> 
                 <p><strong>Bio: </strong> {profile.bio}</p>
-                <p>{profile.createdAt}</p> 
             </div>
             <div className="profile-picture-container">
-                <img src={profile.postImage.myFile} />
+                <img src={profile.postImage.myFile} alt="profile picture" />
             </div>
         </div>
     )

@@ -18,6 +18,15 @@ const Listings = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage, setPostsPerPage] = useState(5)
 
+    function componentDidUpdate() {
+        window.history.pushState(null, document.title, window.location.href);
+        window.addEventListener('popstate', function(event) {
+          window.history.pushState(null, document.title, window.location.href);
+        });
+      }
+
+    componentDidUpdate()
+
     let filteredProfileList = profiles.filter((profile) => {
         if (filterTextValue === 'Guelph') {
             return profile.university === 'Guelph'
