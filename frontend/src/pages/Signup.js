@@ -39,6 +39,9 @@ const Signup = () => {
             />
 
             <button disabled={isLoading}>Sign up</button>
+            <p>
+                Already have an account: <a href="/login">login</a> here
+            </p>
             {error && <div className="error">{error}</div>}
         </form>
 

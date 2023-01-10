@@ -208,13 +208,22 @@ form.login button, form.signup button {
   font-family: "Varela Round";
 }
 
+form.login p, form.signup p {
+  color: #555;
+}
+
+form.login a, form.signup a {
+  color: var(--primary);
+}
+
 .home {
   color: var(--primary);
 }
 
 /*user specific content */
 .userprofile-details h1 {
-  color: white;
+  color: var(--primary);
+  font-family: "Varela Round";
 }
 
 /* filter component */

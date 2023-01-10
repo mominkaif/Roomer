@@ -37,8 +37,12 @@ const Login = () => {
             />
 
             <button disabled={isLoading}>Log in</button>
+            <p>
+                Don't have an account: <a href="/signup">signup</a> here
+            </p>
             {error && <div className="error">{error}</div>}
         </form>
+
     )
 }
 
