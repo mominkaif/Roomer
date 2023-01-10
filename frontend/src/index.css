@@ -199,6 +199,15 @@ form.signup, form.login {
   color: var(--primary);
 }
 
+.form button {
+  width: 100%;
+}
+
+.login h1, .signup h1{
+  display: flex;
+  justify-content: center;
+}
+
 /*email password label */
 form.login label, form.signup label {
   color: #555;
