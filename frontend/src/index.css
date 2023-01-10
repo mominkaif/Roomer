@@ -8,26 +8,16 @@
 }
 
 body {
-  background: #000000;
+  background: #ececec;
   margin: 0;
   font-family: "Varela Round";
 }
 
 header {
-  background: rgba(29,29,31,0.72);
+  background: rgb(255, 255, 255);
   width: 100%;
   z-index: 1;
   color: var(--primary);
-}
-
-header .container {
-  max-width: 1400px;
-  height: 50px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 header a {
@@ -53,7 +43,7 @@ header a {
   display: flex;
   justify-content: space-between;
   z-index: 0;
-  background: rgba(29,29,31,0.72);
+  background: rgba(255, 255, 255);
   top: 50px;
   border-radius: 4px;
   margin: 20px auto;
@@ -99,6 +89,19 @@ header a {
 }
 
 /* new profile form */
+
+.create{
+  background-color: rgb(255, 255, 255);
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h3{
+  color: var(--primary);
+  font-size: x-large;
+}
+
 label, input {
   display: block;
   color: var(--primary);
@@ -111,7 +114,7 @@ input {
   width: 100%;
   color: #555;
   border: 1px solid #555;
-  background-color: rgba(29,29,31,0.72);
+  background-color: #ececec;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -146,13 +149,15 @@ input.error {
 nav {
   display: flex;
   align-items: center;
+  width: 100%;
 }
+
 nav a {
   margin-left: 10px;
 }
 
 nav button {
-  background-color: rgba(29,29,31,0.72);
+  background-color: rgba(255, 255, 255);
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 6px 10px;
@@ -168,13 +173,28 @@ nav span {
   font-size: medium;
 }
 
+.nav-img {
+  width: 70px;
+  height: 50px;
+}
+
+.nav-items-container {
+  display: flex;
+  max-width: 1400px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
 /* auth forms */
 form.signup, form.login {
   font-size: medium;
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: rgba(29,29,31,0.72);
+  background: rgba(255, 255, 255);
   border-radius: 4px;
   color: var(--primary);
 }
@@ -204,17 +224,22 @@ form.login button, form.signup button {
   flex-direction: column;
   justify-content: center;
   width:100%;
-  background-color: rgb(42, 40, 40);
+  background-color: rgb(255, 255, 255);
   padding: 2px;
   border-radius: 5px;
   margin-bottom: -20px;
   font-family: inherit;
   font-weight: bold;
   border: 1px solid white;
+  
+}
+
+.filter-title{
+  border-bottom: 1px solid rgba(29,29,31,0.72);
 }
 
 .filter-area select{
-  background-color: rgb(42, 40, 40);
+  background-color: rgb(255, 255, 255);
   border: none;
   color: var(--primary);
   font-family: inherit;

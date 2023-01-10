@@ -5,7 +5,10 @@ const Filter = (props) => {
 
     return (
         <div className="filter-area">
-            <p>Filter by university:</p>
+            <div className="filter-title">
+                <p>Filter by university:</p>
+            </div>
+
             <select name="university-filter" onChange={onFilterValueChanged}>
                 <option value="All"> All </option>
                 <option value="Guelph"> Guelph </option>
